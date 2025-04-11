@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stellaris Media</title>
 
-    <link rel="icon" type="image/png" href="SM.png">
-    <link rel="shortcut icon" type="image/png" href="SM.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
 
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,7 +33,7 @@
         }
 
         .container {
-            max-width: 700px;
+            max-width: 800px; /* Increased max-width of the container */
             margin: 0 auto;
             padding: 20px;
             display: flex;
@@ -47,20 +47,21 @@
         h1 {
             font-family: 'Sora', sans-serif;
             font-weight: 700;
-            font-size: 45px; /* Updated font size */
+            font-size: 45px;
             letter-spacing: 2px;
             color: #ffffff;
-            margin: 0px 0px 88px; /* Updated margins */
+            margin: 0px 0px 88px;
             text-transform: lowercase;
         }
 
         p {
             font-family: 'Sora', sans-serif;
             font-weight: 500;
-            font-size: 25px; /* Updated font size */
+            font-size: 25px;
             line-height: 1.5;
-            margin: 44px 0px; /* Updated margins */
-            max-width: 600px;
+            margin: 44px 0px;
+            width: 100%; /* Make the paragraph take full width of its parent */
+            max-width: none; /* Override the previous max-width */
             color: #ffffff;
         }
 
@@ -84,32 +85,55 @@
             height: 100%;
         }
 
+        /* Style for the new CTA button */
+        .cta-button {
+            display: inline-block;
+            background-color: #C15AEF; /* Button color */
+            color: #ffffff; /* Text color */
+            padding: 16px 40px; /* Adjust padding as needed */
+            text-decoration: none;
+            font-weight: 700;
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 10px; /* Round corners */
+            font-size: 1.1em;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+            margin-bottom: 40px; /* Add some space below the button */
+        }
+
+        .cta-button:hover {
+            background-color: #a845d6; /* Darker shade on hover */
+        }
+
+        /* Hide the Calendly embed */
         .calendly-inline-widget {
-            width: 100%; /* Make it responsive within the container */
-            max-width: 600px; /* Adjust as needed */
-            height: 700px;
-            margin-bottom: 40px; /* Add some space below the embed */
+            display: none;
         }
 
         @media (max-width: 600px) {
+            .container {
+                max-width: 95%; /* Adjust container width for smaller screens */
+            }
             h1 {
-                font-size: 32px; /* Adjusted for smaller screens */
-                margin-bottom: 60px; /* Adjusted for smaller screens */
+                font-size: 32px;
+                margin-bottom: 60px;
                 letter-spacing: 1.5px;
             }
             p {
-                font-size: 18px; /* Adjusted for smaller screens */
+                font-size: 18px;
                 line-height: 1.4;
                 margin-bottom: 30px;
-                margin-top: 30px; /* Adjusted for smaller screens */
+                margin-top: 30px;
             }
             .video-container {
                 width: 95%;
                 padding-bottom: 53.4375%;
                 margin-bottom: 50px;
             }
-            .calendly-inline-widget {
-                height: 600px; /* Adjust height for smaller screens */
+            .cta-button {
+                padding: 14px 30px;
+                font-size: 1em;
             }
         }
     </style>
@@ -133,6 +157,10 @@
             </iframe>
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <a href="https://calendly.com/stellarismedia/call" target="_blank" class="cta-button">
+            Book A Call
+        </a>
 
         <div class="calendly-inline-widget" data-url="https://calendly.com/stellarismedia/call" style="min-width:320px;height:700px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
