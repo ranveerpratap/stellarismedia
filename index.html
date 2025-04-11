@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellaris Media</title>
+    <title>Stellaris Media | YouTube Client Magnet System</title>
+
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="shortcut icon" type="image/png" href="logo.png">
+
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -11,62 +15,68 @@
 
     <style>
         body {
-            background-color: #000000; /* Solid black background */
+            /* --- Updated Background --- */
+            background-image: url('background.png'); /* Set background image */
+            background-color: #000000; /* Fallback color if image fails */
+            background-size: cover; /* Cover the entire viewport */
+            background-position: center center; /* Center the image */
+            background-repeat: no-repeat; /* Do not repeat the image */
+            background-attachment: fixed; /* Keep background fixed during scroll */
+
+            /* --- Other body styles --- */
             color: #ffffff; /* White text */
-            /* Default font for elements not otherwise specified (like button) */
-            font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif; /* Default font */
             margin: 0;
             padding: 5vh 20px;
             text-align: center;
-            min-height: 110vh; /* Ensures enough height for scrolling effect even with little content */
+            min-height: 110vh; /* Ensures enough height */
         }
 
         .container {
-            max-width: 700px; /* Max width for main content */
-            margin: 0 auto; /* Center the container */
+            max-width: 700px;
+            margin: 0 auto;
             padding: 20px;
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: center; /* Center items horizontally */
+            flex-direction: column;
+            align-items: center;
+            /* Optional: Add a semi-transparent background to the container if text is hard to read on the background image */
+            /* background-color: rgba(0, 0, 0, 0.5); */
+            /* border-radius: 8px; */
         }
 
-        /* --- Updated H1 Styles --- */
         h1 {
             font-family: 'Sora', sans-serif;
-            font-weight: 700; /* Bold */
-            font-size: 36px;  /* Adjusted for visual match with image */
-            letter-spacing: 2px; /* Adjusted for visual match with image */
+            font-weight: 700;
+            font-size: 36px;
+            letter-spacing: 2px;
             color: #ffffff;
-            margin-top: 5vh; /* Space from top */
-            margin-bottom: 25px; /* Space below heading, adjusted */
-            text-transform: lowercase; /* Ensures text is lowercase like image */
+            margin-top: 5vh;
+            margin-bottom: 25px;
+            text-transform: lowercase;
         }
 
-        /* --- Updated P Styles --- */
         p {
             font-family: 'Sora', sans-serif;
-            font-weight: 400; /* Regular weight */
-            font-size: 16px; /* Adjusted for visual match with image */
-            line-height: 1.5; /* Adjusted line spacing for visual match */
-            margin-bottom: 40px; /* Space below paragraph, adjusted */
-            max-width: 600px; /* Limit line width for readability */
-            color: #ffffff; /* Explicitly set white color */
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 40px;
+            max-width: 600px;
+            color: #ffffff;
         }
 
-        /* Video Container Styling */
         .video-container {
             position: relative;
-            width: 90%; /* Responsive width */
-            max-width: 640px; /* Max width for the video */
-            padding-bottom: 50.625%; /* 16:9 Aspect Ratio (9 / 16 * 100) */
+            width: 90%;
+            max-width: 640px;
+            padding-bottom: 50.625%;
             height: 0;
             overflow: hidden;
-            margin-bottom: 60px; /* Space below video */
-            border: 1px solid #555; /* Subtle border */
-            background-color: #111; /* Dark background if video doesn't load */
+            margin-bottom: 60px;
+            border: 1px solid #555;
+            background-color: #111;
         }
 
-        /* Iframe Styling within Video Container */
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -75,59 +85,53 @@
             height: 100%;
         }
 
-        /* Button Styling & Initial Animation State */
         .cta-button {
             display: inline-block;
-            background-color: #e53935; /* Red color */
+            background-color: #e53935;
             color: #ffffff;
-            padding: 14px 40px; /* Button size */
-            text-decoration: none; /* Remove underline from link */
-            font-weight: 700; /* Bold text */
-            /* Using Montserrat for button, fallback to sans-serif */
+            padding: 14px 40px;
+            text-decoration: none;
+            font-weight: 700;
             font-family: 'Montserrat', sans-serif;
-            border-radius: 8px; /* Rounded corners */
-            font-size: 1.1em; /* Button text size */
+            border-radius: 8px;
+            font-size: 1.1em;
             letter-spacing: 0.5px;
             cursor: pointer;
-            /* Initial state for fade-in animation */
             opacity: 0;
             visibility: hidden;
-            transform: translateY(30px); /* Start slightly lower */
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s; /* Animation */
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out, visibility 0.6s;
         }
 
-        /* Visible state for button animation */
         .cta-button.visible {
             opacity: 1;
             visibility: visible;
-            transform: translateY(0); /* Move to final position */
+            transform: translateY(0);
         }
 
-        /* Button Hover Effect */
         .cta-button:hover {
-            background-color: #c62828; /* Darker red on hover */
+            background-color: #c62828;
         }
 
-        /* --- Updated Responsive adjustments --- */
         @media (max-width: 600px) {
             h1 {
-                font-size: 28px; /* Slightly smaller heading on mobile */
-                margin-bottom: 20px; /* Adjust spacing */
-                letter-spacing: 1.5px; /* Adjust spacing */
+                font-size: 28px;
+                margin-bottom: 20px;
+                letter-spacing: 1.5px;
             }
             p {
-                font-size: 15px; /* Slightly smaller text on mobile */
-                line-height: 1.4; /* Adjust line height */
-                margin-bottom: 30px; /* Adjust spacing */
+                font-size: 15px;
+                line-height: 1.4;
+                margin-bottom: 30px;
             }
             .video-container {
-                width: 95%; /* Use more width on smaller screens */
-                padding-bottom: 53.4375%; /* Adjust padding to maintain aspect ratio for 95% width */
-                margin-bottom: 50px; /* Adjust spacing */
+                width: 95%;
+                padding-bottom: 53.4375%;
+                margin-bottom: 50px;
             }
             .cta-button {
-                padding: 12px 35px; /* Slightly smaller button */
-                font-size: 1em; /* Adjust font size */
+                padding: 12px 35px;
+                font-size: 1em;
             }
         }
     </style>
@@ -160,31 +164,18 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const ctaButton = document.getElementById('ctaButton');
-            // How far down the user needs to scroll (in pixels) before the button appears
             const scrollThreshold = 150;
-            let buttonMadeVisible = false; // Flag to ensure animation only runs once
+            let buttonMadeVisible = false;
 
             function checkScroll() {
-                // Check if button hasn't been made visible yet AND scroll position is past the threshold
                 if (!buttonMadeVisible && window.scrollY > scrollThreshold) {
-                    ctaButton.classList.add('visible'); // Add 'visible' class to trigger CSS transition
-                    buttonMadeVisible = true; // Set flag to true
-                    // Optional: remove the event listener if you don't need it anymore
-                    // window.removeEventListener('scroll', checkScroll);
+                    ctaButton.classList.add('visible');
+                    buttonMadeVisible = true;
                 }
-                // Optional: Add an else if you want the button to disappear when scrolling back up
-                // else if (buttonMadeVisible && window.scrollY <= scrollThreshold) {
-                //    ctaButton.classList.remove('visible');
-                //    buttonMadeVisible = false; // Allow it to reappear if they scroll down again
-                // }
             }
 
-            // Listen for scroll events
             window.addEventListener('scroll', checkScroll);
-
-            // Initial check in case the page loads already scrolled past the threshold
-            // or if the threshold is very small (e.g., 0)
-            setTimeout(checkScroll, 100); // Short delay to ensure layout is stable
+            setTimeout(checkScroll, 100);
         });
     </script>
 </body>
