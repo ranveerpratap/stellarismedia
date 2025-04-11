@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stellaris Media</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #000000; /* Solid black background */
+            color: #ffffff; /* White text */
+            font-family: 'Montserrat', sans-serif; /* Simple sans-serif font */
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            text-align: center; /* Center text within elements */
+        }
+
+        .container {
+            max-width: 650px; /* Limit container width */
+            padding: 20px;
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            align-items: center; /* Center items horizontally within container */
+        }
+
+        h1 {
+            font-size: 1.8em; /* Adjust size as needed */
+            font-weight: 400; /* Lighter font weight */
+            letter-spacing: 1px; /* Slight letter spacing */
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1em; /* Adjust size as needed */
+            line-height: 1.6;
+            margin-bottom: 30px;
+            max-width: 550px; /* Control paragraph width */
+        }
+
+        .video-container {
+            position: relative;
+            width: 80%; /* Adjust width relative to container */
+            max-width: 560px; /* Max video width */
+            padding-bottom: 45%; /* Adjust padding-bottom to match video aspect ratio (80% * 9/16 ≈ 45%) */
+            height: 0;
+            overflow: hidden;
+            margin-bottom: 35px; /* Space below video */
+            border: 1px solid #555; /* Optional: subtle border like in the image */
+            background-color: #111; /* Dark background for the container itself */
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: #e53935; /* Red color */
+            color: #ffffff; /* White text */
+            padding: 12px 35px; /* Adjust padding */
+            text-decoration: none; /* Remove underline */
+            font-weight: 700; /* Bold text */
+            border-radius: 8px; /* Rounded corners */
+            transition: background-color 0.3s ease; /* Smooth hover effect */
+            font-size: 1em; /* Adjust font size */
+            letter-spacing: 0.5px;
+        }
+
+        .cta-button:hover {
+            background-color: #c62828; /* Darker red on hover */
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 1.5em;
+            }
+            p {
+                font-size: 0.9em;
+            }
+            .video-container {
+                width: 95%;
+                padding-bottom: 53.4375%; /* Recalculate for 95% width (95% * 9/16) */
+            }
+            .cta-button {
+                padding: 10px 30px;
+                font-size: 0.9em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>stellaris media</h1>
+        <p>
+            For coaches, consultants, and agencies - we are helping you add an extra
+            revenue of $100k-$1M+ per month by getting clients on autopilot,
+            using our fool-proof 3 step blueprint system.
+        </p>
+        <div class="video-container">
+            <iframe 
+                src="https://player.vimeo.com/video/1068769826?h=42d0e86a15&autoplay=1&loop=1&title=0&byline=0&portrait=0" 
+                style="position:absolute;top:0;left:0;width:100%;height:100%;" 
+                frameborder="0" 
+                allow="autoplay; fullscreen; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
+        <script src="https://player.vimeo.com/api/player.js"></script>
+
+        <a href="https://calendly.com/stellarismedia/30min" target="_blank" class="cta-button">
+            BOOK A CALL
+        </a>
+    </div>
+</body>
+</html>
