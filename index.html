@@ -85,7 +85,14 @@
             height: 100%;
         }
 
-        /* Style for the new CTA button */
+        /* Style for the new CTA button with glow */
+        .cta-button-wrapper {
+            position: relative; /* For positioning the glow */
+            margin-bottom: 40px;
+            border-radius: 25px; /* More round corners for the wrapper */
+            overflow: hidden; /* Clip the glow to the wrapper */
+        }
+
         .cta-button {
             display: inline-block;
             background-color: #C15AEF; /* Button color */
@@ -94,16 +101,36 @@
             text-decoration: none;
             font-weight: 700;
             font-family: 'Montserrat', sans-serif;
-            border-radius: 10px; /* Round corners */
+            border-radius: 25px; /* More round corners for the button */
             font-size: 1.1em;
             letter-spacing: 0.5px;
             cursor: pointer;
-            transition: background-color 0.3s ease; /* Smooth hover effect */
-            margin-bottom: 40px; /* Add some space below the button */
+            transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Smooth hover and shadow */
+            position: relative; /* To be on top of the glow */
+            z-index: 1; /* Ensure button is above the glow */
+            border: none; /* Remove default button border if any */
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            right: -5px;
+            bottom: -5px;
+            background: radial-gradient(circle, rgba(193, 90, 239, 0.6), transparent, transparent);
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cta-button:hover::before {
+            opacity: 1;
         }
 
         .cta-button:hover {
             background-color: #a845d6; /* Darker shade on hover */
+            box-shadow: 0 0 15px rgba(193, 90, 239, 0.7); /* Optional: Add a subtle shadow on hover */
         }
 
         /* Hide the Calendly embed */
@@ -131,9 +158,13 @@
                 padding-bottom: 53.4375%;
                 margin-bottom: 50px;
             }
+            .cta-button-wrapper {
+                border-radius: 20px; /* Adjust for smaller screens */
+            }
             .cta-button {
                 padding: 14px 30px;
                 font-size: 1em;
+                border-radius: 20px; /* Adjust for smaller screens */
             }
         }
     </style>
@@ -158,9 +189,11 @@
         </div>
         <script src="https://player.vimeo.com/api/player.js"></script>
 
-        <a href="https://calendly.com/stellarismedia/call" target="_blank" class="cta-button">
-            Book A Call
-        </a>
+        <div class="cta-button-wrapper">
+            <a href="https://calendly.com/stellarismedia/call" target="_blank" class="cta-button">
+                Book A Call
+            </a>
+        </div>
 
         <div class="calendly-inline-widget" data-url="https://calendly.com/stellarismedia/call" style="min-width:320px;height:700px;"></div>
         <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
