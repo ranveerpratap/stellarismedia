@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Stellaris Media</title>
   <link rel="icon" href="SM.png" />
-
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@400;700&display=swap" rel="stylesheet" />
 
   <style>
@@ -27,8 +26,8 @@
     }
 
     .info {
-      font-size: 1.25rem;
-      margin-bottom: 50px;
+      font-size: 25px;
+      margin-bottom: 60px;
       line-height: 1.6;
     }
 
@@ -38,11 +37,18 @@
       text-shadow: 0 0 8px rgba(0, 170, 255, 0.8);
     }
 
+    .video-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 60vh;
+      margin-bottom: 40px;
+    }
+
     .video {
       position: relative;
       width: 100%;
       max-width: 640px;
-      margin: 0 auto 40px;
       padding-bottom: 56.25%;
       height: 0;
     }
@@ -56,7 +62,7 @@
 
     .btn {
       display: inline-block;
-      background: #C15AEF;
+      background: #00aaff;
       color: #fff;
       padding: 14px 32px;
       font-weight: 700;
@@ -72,7 +78,7 @@
 
     @media (max-width: 600px) {
       h1 { font-size: 2rem; margin-bottom: 40px; }
-      .info { font-size: 1rem; margin-bottom: 35px; }
+      .info { font-size: 20px; margin-bottom: 40px; }
     }
   </style>
 </head>
@@ -85,10 +91,12 @@
     <span class="glow">$20k–50k/month</span> extra revenue. Grow your audience and close more deals.
   </p>
 
-  <div class="video">
-    <iframe src="https://player.vimeo.com/video/1068769826?h=42d0e86a15&title=0&byline=0&portrait=0&controls=1" 
-            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy">
-    </iframe>
+  <div class="video-wrapper">
+    <div class="video">
+      <iframe src="https://player.vimeo.com/video/1068769826?h=42d0e86a15&title=0&byline=0&portrait=0&controls=1"
+              allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy">
+      </iframe>
+    </div>
   </div>
 
   <a class="btn" href="https://calendly.com/stellarismedia/call" target="_blank">Book A Call</a>
