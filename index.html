@@ -1,77 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stellaris Media</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stellaris Media</title>
+  <link rel="icon" href="SM.png" />
 
-    <link rel="icon" type="image/png" href="SM.png">
-    <link rel="shortcut icon" type="image/png" href="SM.png">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@400;700&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preload" as="font" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@400;700&display=swap" type="font/woff2" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@400;700&display=swap" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Sora:wght@400;700&display=swap"></noscript>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    <style>
-        /* Minified CSS for faster loading */
-        body {background-image: url('background.png'); background-color: #000; background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed; color: #fff; font-family: 'Montserrat', sans-serif; margin: 0; padding: 5vh 20px; text-align: center; min-height: 110vh;}
-        .container {max-width: 800px; margin: 0 auto; padding: 20px; display: flex; flex-direction: column; align-items: center;}
-        h1 {font-family: 'Sora', sans-serif; font-weight: 700; font-size: 45px; letter-spacing: 2px; color: #fff; margin: 0 0 88px; text-transform: lowercase;}
-        p {font-family: 'Sora', sans-serif; font-weight: 500; font-size: 25px; line-height: 1.5; margin: 44px 0; width: 100%; max-width: none; color: #fff;}
-        .video-container {position: relative; width: 90%; max-width: 640px; padding-bottom: 50.625%; height: 0; overflow: hidden; margin-bottom: 60px; border: 1px solid #555; background-color: #111;}
-        .video-container iframe {position: absolute; top: 0; left: 0; width: 100%; height: 100%;}
-        .cta-button {display: inline-block; background-color: #C15AEF; color: #fff; padding: 16px 40px; text-decoration: none; font-weight: 700; font-family: 'Montserrat', sans-serif; border-radius: 30px; font-size: 1.1em; letter-spacing: 0.5px; cursor: pointer; transition: box-shadow 0.3s ease; margin-bottom: 40px; box-shadow: 0 0 15px rgba(193, 90, 239, 0.7);}
-        .cta-button:hover {box-shadow: 0 0 30px rgba(193, 90, 239, 0.9);}
-        .calendly-inline-widget {display: none;} /* Initially hide, might be toggled later */
+    body {
+      font-family: 'Sora', sans-serif;
+      background: #000 url('background.png') center/cover no-repeat fixed;
+      color: #fff;
+      text-align: center;
+      padding: 5vh 20px;
+    }
 
-        /* Responsive adjustments */
-        @media (max-width: 768px) { /* Common tablet breakpoint */
-            h1 {font-size: 38px; margin-bottom: 60px;}
-            p {font-size: 22px; margin: 30px 0;}
-            .video-container {width: 95%; margin-bottom: 50px;}
-            .cta-button {padding: 14px 35px; font-size: 1em; border-radius: 25px; margin-bottom: 30px; box-shadow: 0 0 10px rgba(193, 90, 239, 0.7);}
-            .cta-button:hover {box-shadow: 0 0 20px rgba(193, 90, 239, 0.9);}
-        }
+    h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2.5rem;
+      margin-bottom: 60px;
+      text-transform: lowercase;
+    }
 
-        @media (max-width: 600px) { /* Common mobile breakpoint */
-            h1 {font-size: 32px; margin-bottom: 40px;}
-            p {font-size: 18px; line-height: 1.4; margin: 25px 0;}
-            .video-container {padding-bottom: 56.25%; /* 16:9 aspect ratio for mobile */ margin-bottom: 40px;}
-            .cta-button {padding: 12px 30px; font-size: 0.95em; border-radius: 20px; margin-bottom: 25px; box-shadow: 0 0 8px rgba(193, 90, 239, 0.7);}
-            .cta-button:hover {box-shadow: 0 0 15px rgba(193, 90, 239, 0.9);}
-        }
-    </style>
+    .info {
+      font-size: 1.25rem;
+      margin-bottom: 50px;
+      line-height: 1.6;
+    }
+
+    .glow {
+      color: #00aaff;
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(0, 170, 255, 0.8);
+    }
+
+    .video {
+      position: relative;
+      width: 100%;
+      max-width: 640px;
+      margin: 0 auto 40px;
+      padding-bottom: 56.25%;
+      height: 0;
+    }
+
+    .video iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #C15AEF;
+      color: #fff;
+      padding: 14px 32px;
+      font-weight: 700;
+      border-radius: 25px;
+      text-decoration: none;
+      box-shadow: 0 0 15px rgba(193, 90, 239, 0.6);
+      transition: box-shadow 0.3s;
+    }
+
+    .btn:hover {
+      box-shadow: 0 0 30px rgba(193, 90, 239, 0.9);
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; margin-bottom: 40px; }
+      .info { font-size: 1rem; margin-bottom: 35px; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
+  <h3>(under construction)</h3>
+  <h1>stellaris media</h1>
 
-<h3>(under construction)</h3>
+  <p class="info">
+    Get high-quality, consistent YouTube content without spending hours creating videos.<br />
+    <span class="glow">$20k–50k/month</span> extra revenue. Grow your audience and close more deals.
+  </p>
 
-        <h1>stellaris media</h1>
-        
+  <div class="video">
+    <iframe src="https://player.vimeo.com/video/1068769826?h=42d0e86a15&title=0&byline=0&portrait=0&controls=1" 
+            allow="autoplay; fullscreen; picture-in-picture" allowfullscreen loading="lazy">
+    </iframe>
+  </div>
 
-        <p>
-            for coaches, consultants, and agencies: we can help you add an extra
-            revenue of $20k-50k/month while getting clients on autopilot,
-            using our YouTube client magnet system.
-        </p>
-
-        <div class="video-container">
-            <iframe
-                src="https://player.vimeo.com/video/1068769826?h=42d0e86a15&autoplay=0&loop=1&title=0&byline=0&portrait=0"
-                frameborder="0"
-                allow="autoplay; fullscreen; picture-in-picture"
-                allowfullscreen
-                loading="lazy"> </iframe>
-        </div>
-        <script src="https://player.vimeo.com/api/player.js" async></script> <a href="https://calendly.com/stellarismedia/call" target="_blank" class="cta-button">
-            Book A Call
-        </a>
-
-        <div class="calendly-inline-widget" data-url="https://calendly.com/stellarismedia/call" style="min-width:320px;height:700px;"></div>
-        <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-    </div>
-
+  <a class="btn" href="https://calendly.com/stellarismedia/call" target="_blank">Book A Call</a>
 </body>
 </html>
