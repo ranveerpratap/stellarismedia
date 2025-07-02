@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Stellaris Media</title>
+  <link rel="icon" href="SM.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center center / cover;
+      color: #111;
+      padding: 20px;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    /* ---------- Navigation ---------- */
+    .navbar {
+      margin: 10px 0 30px;
+    }
+    .navbar a {
+      margin: 0 12px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #111;
+      text-decoration: none;
+    }
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      text-transform: lowercase;
+      margin: 20px 0 40px;
+    }
+    .info-heading {
+      font-size: 1.7rem;
+      font-weight: 800;
+      max-width: 750px;
+      margin: 40px auto;
+      line-height: 1.4;
+    }
+    .note {
+      font-size: 1.2rem;
+      font-weight: 700;
+      margin: 60px auto 40px;
+      max-width: 700px;
+    }
+    .fade-in {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .info-heading { font-size: 1.35rem; }
+      .note { font-size: 1rem; }
+      .navbar a { font-size: 0.95rem; }
+    }
+    @media (max-width: 480px) {
+      .info-heading { font-size: 1.2rem; }
+      .note { font-size: 0.95rem; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top Navigation -->
+  <nav class="navbar">
+    <a href="/">Home</a>
+    <a href="/policies">Policies</a>
+    <a href="/contact">Contact&nbsp;Us</a>
+  </nav>
+
+  <header>
+    <h1>stellaris media</h1>
+  </header>
+
+  <div class="fade-in">
+    <p class="info-heading">Generate an extra $20,000 to $50,000/month with our YouTube Organic Funnels.</p>
+  </div>
+
+  <div class="fade-in">
+    <p class="note">Coming&nbsp;Soon</p>
+  </div>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+    faders.forEach(fader => appearOnScroll.observe(fader));
+  </script>
+</body>
+</html>
