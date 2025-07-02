@@ -2,124 +2,138 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Stellaris Media</title>
   <link rel="icon" href="/SM.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+    /* -------- RESET -------- */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
-      font-family:'Inter',sans-serif;
-      background:url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center/cover;
-      color:#111;
-      padding:20px;
-      text-align:center;
-      line-height:1.6;
-      overflow-x:hidden;
+      font-family: 'Inter', sans-serif;
+      background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
+      color: #111;
+      padding: 40px 20px;          /* top padding for nav */
+      min-height: 100vh;           /* fix bottom space */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
     }
-    .navbar {
-      margin: 10px 0 30px;
+
+    /* -------- NAV WRAPPER -------- */
+    .nav-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 50px; }
+
+    /* -------- PILL NAV -------- */
+    .nav-container {
+      background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 46px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 12px 32px;
     }
-    .navbar a {
-      margin: 0 12px;
+    .nav-container a {
       font-size: 1rem;
       font-weight: 600;
       color: #111;
       text-decoration: none;
+      transition: opacity 0.2s;
     }
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+    .nav-container a:hover { opacity: 0.65; }
+
+    /* -------- HEADINGS -------- */
     header h1 {
       font-size: 2.5rem;
       font-weight: 800;
       text-transform: lowercase;
-      margin: 20px 0 40px;
+      margin-bottom: 40px;
     }
-    h2 {
-      font-size: 1.6rem;
-      font-weight: 800;
-      margin: 40px 0 15px;
-    }
-    h3 {
-      font-size: 1.3rem;
-      margin: 25px 0 10px;
-    }
+    h2 { font-size: 1.6rem; font-weight: 800; margin: 40px 0 15px; }
+    h3 { font-size: 1.3rem; margin: 25px 0 10px; }
+
+    /* -------- CONTENT -------- */
     p, li {
       font-size: 1rem;
       max-width: 800px;
       margin: 0 auto 12px;
       text-align: left;
+      line-height: 1.6;
     }
-    ul {
-      list-style: disc;
-      margin-left: 1.5rem;
-    }
-    section {
-      margin-bottom: 60px;
-    }
-    @media(max-width:768px) {
+    ul { list-style: disc; margin-left: 1.5rem; }
+    ol { margin-left: 1.5rem; }
+    section { width: 100%; max-width: 900px; margin-bottom: 60px; }
+
+    /* -------- RESPONSIVE -------- */
+    @media (max-width: 768px) {
+      .nav-container { gap: 20px; padding: 10px 24px; }
       header h1 { font-size: 2rem; }
       h2 { font-size: 1.3rem; }
       p, li { font-size: 0.95rem; }
-      .navbar a { font-size: 0.95rem; }
+      .nav-container a { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Navigation -->
-  <nav class="navbar">
-    <a href="/">Home</a>
-    <a href="/about">About&nbsp;Us</a>
-    <a href="/policies">Policies</a>
-    <a href="/contact">Contact&nbsp;Us</a>
-  </nav>
+  <!-- ---------- NAVIGATION ---------- -->
+  <div class="nav-wrapper">
+    <nav class="nav-container">
+      <a href="/">Home</a>
+      <a href="/about">About&nbsp;Us</a>
+      <a href="/policies">Policies</a>
+      <a href="/contact">Contact&nbsp;Us</a>
+    </nav>
+  </div>
 
+  <!-- ---------- HEADER ---------- -->
   <header>
     <h1>stellaris media</h1>
   </header>
 
-  <!-- What We Do -->
+  <!-- ---------- WHAT WE DO ---------- -->
   <section id="what-we-do">
     <h2>What&nbsp;We&nbsp;Do</h2>
-    <p>Stellaris Media helps agency owners and consultants attract high-quality inbound leads through content-led YouTube marketing.  
-    We turn your expertise into video content that educates, builds trust, and converts cold viewers into qualified prospects—without paid ads.</p>
+    <p>Stellaris Media helps <strong>agency owners and consultants</strong> attract high‑quality inbound leads through strategic video content on YouTube.  
+    We transform your expertise into engaging content that educates, builds trust, and converts viewers into qualified prospects—no paid ads required.</p>
   </section>
 
-  <!-- What We Offer -->
+  <!-- ---------- WHAT WE OFFER ---------- -->
   <section id="what-we-offer">
     <h2>What&nbsp;We&nbsp;Offer</h2>
     <ul>
-      <li><strong>YouTube Content Strategy</strong> – tailored around your niche, audience pain points, and funnel goals.</li>
-      <li><strong>End-to-End Video Production</strong> – including scripting, editing, thumbnail design, and publishing.</li>
-      <li><strong>Content SEO & Distribution</strong> – we optimize and position your content to rank and be discovered.</li>
-      <li><strong>Organic Funnel Design</strong> – playlists, CTAs, and channel layout that convert traffic into booked calls.</li>
+      <li><strong>YouTube Content Strategy</strong> – topic research, keyword planning, and funnel alignment.</li>
+      <li><strong>End‑to‑End Video Production</strong> – scripting, filming guidance, editing, thumbnail design, publishing.</li>
+      <li><strong>Content SEO & Distribution</strong> – optimization for discovery plus repurposing snippets across platforms.</li>
+      <li><strong>Organic Funnel Design</strong> – playlists, CTAs, lead magnets, and nurture flows that turn viewers into booked calls.</li>
     </ul>
   </section>
 
-  <!-- How We Do It -->
+  <!-- ---------- HOW WE DO IT ---------- -->
   <section id="how-we-do">
     <h2>How&nbsp;We&nbsp;Do&nbsp;It</h2>
-    <ol style="max-width:800px;margin:0 auto;text-align:left;">
-      <li><strong>Discovery & Market Research</strong> – understand your positioning and ideal clients.</li>
-      <li><strong>Keyword & Topic Planning</strong> – based on what your prospects are already searching for.</li>
-      <li><strong>High-Converting Content Creation</strong> – story-driven, value-rich videos optimized for retention and trust.</li>
-      <li><strong>Optimization & Analytics</strong> – we track performance, tweak titles/thumbnails, and iterate every month.</li>
+    <ol>
+      <li><strong>Discovery & Positioning</strong> – clarify your ICP, brand voice, and differentiation.</li>
+      <li><strong>Data‑Driven Editorial Calendar</strong> – keyword intent + audience pain points mapped to revenue milestones.</li>
+      <li><strong>High‑Impact Production</strong> – retention‑focused scripts, dynamic editing, compelling thumbnails.</li>
+      <li><strong>Conversion Layer</strong> – optimized CTAs, lead magnets, and email sequences to move prospects forward.</li>
+      <li><strong>Continuous Optimization</strong> – weekly performance reviews and iterative testing so results compound.</li>
     </ol>
   </section>
 
-  <!-- Founder -->
+  <!-- ---------- FOUNDER ---------- -->
   <section id="founder">
     <h2>Founder</h2>
-    <p><strong>Ranveer Pratap</strong> is a content strategist and YouTube organic growth specialist.  
-    He founded Stellaris Media to give agencies and experts a system to attract ideal clients without paid traffic—just strategic content.</p>
+    <p><strong>Ranveer Pratap</strong> is a content strategist and organic‑growth specialist.  
+    After scaling multiple channels through value‑driven content, he launched Stellaris Media to give agencies and experts a proven system for predictable, high‑quality leads without paid ads.</p>
   </section>
 
-  <!-- Pricing Note -->
+  <!-- ---------- PRICING NOTE ---------- -->
   <section id="pricing-note">
     <h3>Flexible&nbsp;Pricing</h3>
-    <p>We tailor scope and deliverables based on your current stage and goals.  
-    Pricing is discussed transparently on a Google Meet after we understand your needs, so you're only paying for the things that actually move your business forward.</p>
+    <p>Engagements are tailored to your stage and goals.  
+    We discuss scope and investment transparently on a quick Google Meet so you pay only for the levers that move <em>your</em> business forward.</p>
   </section>
 </body>
 </html>
