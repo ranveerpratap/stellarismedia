@@ -7,117 +7,129 @@
   <link rel="icon" href="SM.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <style>
+    /* -------- RESET -------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
       background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
       color: #111;
-      padding: 20px;
-      text-align: center;
-      min-height: 100vh;
+      padding: 40px 20px;                 /* extra top space for nav */
+      min-height: 100vh;                  /* fixes bottom white space */
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
-    /* ---------- Navigation ---------- */
-    .navbar {
-      margin: 10px 0 30px;
+    /* -------- NAV WRAPPER -------- */
+    .nav-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      margin-bottom: 50px;
     }
-    .navbar a {
-      margin: 0 12px;
+
+    /* -------- NAV CONTAINER (pill) -------- */
+    .nav-container {
+      background: rgba(255, 255, 255, 0.9);
+      backdrop-filter: blur(8px);
+      border-radius: 46px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      padding: 12px 32px;
+    }
+
+    /* -------- NAV LINKS -------- */
+    .nav-container a {
       font-size: 1rem;
       font-weight: 600;
       color: #111;
       text-decoration: none;
+      transition: opacity 0.2s;
     }
-    .navbar a:hover {
-      text-decoration: underline;
-    }
+    .nav-container a:hover { opacity: 0.65; }
 
-    /* ---------- Headers ---------- */
+    /* -------- MAIN CONTENT -------- */
     header h1 {
       font-size: 2.5rem;
       font-weight: 800;
       text-transform: lowercase;
-      margin: 20px 0 40px;
+      margin-bottom: 40px;
     }
-
     .info-heading {
       font-size: 1.7rem;
       font-weight: 800;
       max-width: 750px;
-      margin: 40px auto;
+      margin-bottom: 60px;
       line-height: 1.4;
     }
-
     .note {
       font-size: 1.2rem;
       font-weight: 700;
-      margin: 60px auto 40px;
       max-width: 700px;
     }
 
+    /* -------- FADE‑IN EFFECT -------- */
     .fade-in {
       opacity: 0;
       transform: translateY(40px);
       transition: opacity 0.6s ease-out, transform 0.6s ease-out;
     }
-
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
 
+    /* -------- RESPONSIVE -------- */
     @media (max-width: 768px) {
-      header h1   { font-size: 2rem; }
-      .info-heading { font-size: 1.35rem; }
-      .note         { font-size: 1rem; }
-      .navbar a     { font-size: 0.95rem; }
+      .nav-container { gap: 20px; padding: 10px 24px; }
+      header h1        { font-size: 2rem; }
+      .info-heading    { font-size: 1.35rem; }
+      .note            { font-size: 1rem; }
+      .nav-container a { font-size: 0.95rem; }
     }
-
     @media (max-width: 480px) {
       .info-heading { font-size: 1.2rem; }
-      .note         { font-size: 0.95rem; }
     }
   </style>
 </head>
 <body>
-  <!-- Top Navigation -->
-  <nav class="navbar">
-    <a href="/">Home</a>
-    <a href="/about">About&nbsp;Us</a>
-    <a href="/policies">Policies</a>
-    <a href="/contact">Contact&nbsp;Us</a>
-  </nav>
+  <!-- ---------- NAVIGATION BAR ---------- -->
+  <div class="nav-wrapper">
+    <nav class="nav-container">
+      <a href="/">Home</a>
+      <a href="/about">About&nbsp;Us</a>
+      <a href="/policies">Policies</a>
+      <a href="/contact">Contact&nbsp;Us</a>
+    </nav>
+  </div>
 
-  <!-- Logo / Site Name -->
-  <header>
+  <!-- ---------- MAIN HERO ---------- -->
+  <header class="fade-in">
     <h1>stellaris media</h1>
   </header>
 
-  <!-- Headline -->
-  <div class="fade-in">
-    <p class="info-heading">Generate an extra $20,000 to $50,000/month with our YouTube Organic Funnels.</p>
-  </div>
+  <p class="info-heading fade-in">
+    Generate an extra $20,000 to $50,000/month<br/>
+    with our YouTube Organic Funnels.
+  </p>
 
-  <!-- Coming Soon Note -->
-  <div class="fade-in">
-    <p class="note">Coming&nbsp;Soon</p>
-  </div>
+  <p class="note fade-in">Coming&nbsp;Soon</p>
 
-  <!-- Scroll Animation Script -->
+  <!-- ---------- FADE‑IN SCRIPT ---------- -->
   <script>
     const faders = document.querySelectorAll('.fade-in');
-    const appearOptions = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const appearOnScroll = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+    const appearOpts = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
+    const observer  = new IntersectionObserver((entries, obs) => {
+      entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        e.target.classList.add('visible');
+        obs.unobserve(e.target);
       });
-    }, appearOptions);
-    faders.forEach(fader => appearOnScroll.observe(fader));
+    }, appearOpts);
+    faders.forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
