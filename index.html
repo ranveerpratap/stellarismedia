@@ -13,8 +13,8 @@
       font-family: 'Inter', sans-serif;
       background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
       color: #111;
-      padding: 40px 20px;                 /* extra top space for nav */
-      min-height: 100vh;                  /* fixes bottom white space */
+      padding: 40px 20px;          /* top padding for nav */
+      min-height: 100vh;           /* fix bottom space */
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -22,16 +22,11 @@
     }
 
     /* -------- NAV WRAPPER -------- */
-    .nav-wrapper {
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      margin-bottom: 50px;
-    }
+    .nav-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 50px; }
 
-    /* -------- NAV CONTAINER (pill) -------- */
+    /* -------- PILL NAV -------- */
     .nav-container {
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(255,255,255,0.9);
       backdrop-filter: blur(8px);
       border-radius: 46px;
       box-shadow: 0 4px 10px rgba(0,0,0,0.06);
@@ -40,8 +35,6 @@
       gap: 32px;
       padding: 12px 32px;
     }
-
-    /* -------- NAV LINKS -------- */
     .nav-container a {
       font-size: 1rem;
       font-weight: 600;
@@ -51,7 +44,7 @@
     }
     .nav-container a:hover { opacity: 0.65; }
 
-    /* -------- MAIN CONTENT -------- */
+    /* -------- HERO CONTENT -------- */
     header h1 {
       font-size: 2.5rem;
       font-weight: 800;
@@ -65,10 +58,23 @@
       margin-bottom: 60px;
       line-height: 1.4;
     }
-    .note {
-      font-size: 1.2rem;
-      font-weight: 700;
-      max-width: 700px;
+
+    /* -------- CTA BUTTON -------- */
+    .cta-btn {
+      display: inline-block;
+      background: #111;
+      color: #fff;
+      padding: 16px 38px;
+      font-weight: 800;
+      font-size: 1.05rem;
+      border-radius: 50px;
+      text-decoration: none;
+      box-shadow: 0 0 10px rgba(0,0,0,0.15);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .cta-btn:hover {
+      box-shadow: 0 0 18px rgba(0,0,0,0.25);
+      transform: translateY(-3px);
     }
 
     /* -------- FADE‑IN EFFECT -------- */
@@ -85,10 +91,10 @@
     /* -------- RESPONSIVE -------- */
     @media (max-width: 768px) {
       .nav-container { gap: 20px; padding: 10px 24px; }
-      header h1        { font-size: 2rem; }
-      .info-heading    { font-size: 1.35rem; }
-      .note            { font-size: 1rem; }
-      .nav-container a { font-size: 0.95rem; }
+      header h1          { font-size: 2rem; }
+      .info-heading      { font-size: 1.35rem; }
+      .nav-container a   { font-size: 0.95rem; }
+      .cta-btn           { padding: 14px 32px; font-size: 1rem; }
     }
     @media (max-width: 480px) {
       .info-heading { font-size: 1.2rem; }
@@ -96,7 +102,7 @@
   </style>
 </head>
 <body>
-  <!-- ---------- NAVIGATION BAR ---------- -->
+  <!-- ---------- NAVIGATION ---------- -->
   <div class="nav-wrapper">
     <nav class="nav-container">
       <a href="/">Home</a>
@@ -106,7 +112,7 @@
     </nav>
   </div>
 
-  <!-- ---------- MAIN HERO ---------- -->
+  <!-- ---------- HERO SECTION ---------- -->
   <header class="fade-in">
     <h1>stellaris media</h1>
   </header>
@@ -116,7 +122,10 @@
     with our YouTube Organic Funnels.
   </p>
 
-  <p class="note fade-in">Coming&nbsp;Soon</p>
+  <!-- ---------- CTA BUTTON ---------- -->
+  <a class="cta-btn fade-in" href="https://calendly.com/stellarismedia/call" target="_blank" rel="noopener noreferrer">
+    Book&nbsp;A&nbsp;Call
+  </a>
 
   <!-- ---------- FADE‑IN SCRIPT ---------- -->
   <script>
