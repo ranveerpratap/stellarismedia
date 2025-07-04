@@ -3,33 +3,30 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Legal Policies | Stellaris Media</title>
+  <title>Policies | Stellaris Media</title>
   <link rel="icon" href="/SM.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <style>
     /* -------- RESET -------- */
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Inter', sans-serif;
-      background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
+      background: #f9f9f9;
       color: #111;
-      padding: 40px 20px;          /* top padding for nav */
-      min-height: 100vh;           /* fix bottom space */
+      padding: 40px 24px 0;     /* bottom padding handled by footer */
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
-      text-align: center;
     }
 
-    /* -------- NAV WRAPPER -------- */
+    /* -------- TOP NAV (pill) -------- */
     .nav-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 50px; }
-
-    /* -------- PILL NAV -------- */
     .nav-container {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
+      background: #fff;
       border-radius: 46px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
       gap: 32px;
@@ -42,95 +39,115 @@
       text-decoration: none;
       transition: opacity 0.2s;
     }
-    .nav-container a:hover { opacity: 0.65; }
+    .nav-container a:hover { opacity: 0.7; }
 
-    /* -------- HEADERS -------- */
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      text-transform: lowercase;
-      margin-bottom: 40px;
+    /* -------- MAIN CONTENT BOX -------- */
+    .content {
+      max-width: 900px;
+      width: 100%;
+      background: #fff;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
     }
-    h2 { font-size: 1.6rem; font-weight: 800; margin: 40px 0 15px; }
-    h3 { font-size: 1.3rem; margin: 25px 0 10px; }
+    h1      { font-size: 1.9rem; font-weight: 800; margin-bottom: 8px; }
+    .date   { font-size: 0.95rem; color: #666; margin-bottom: 30px; }
+    h2      { font-size: 1.2rem; font-weight: 700; margin: 40px 0 10px; border-bottom: 2px solid #eee; padding-bottom: 6px; }
+    p, li   { font-size: 1rem; line-height: 1.7; }
+    p       { margin-bottom: 18px; }
+    ul      { margin: 8px 0 20px 1.5rem; }
+    li      { margin-bottom: 10px; }
 
-    /* -------- CONTENT -------- */
-    p, li {
-      font-size: 1rem;
-      max-width: 850px;
-      margin: 0 auto 12px;
-      text-align: left;
-      line-height: 1.6;
+    /* -------- FOOTER -------- */
+    footer {
+      background: #111;
+      color: #eee;
+      width: 100%;
+      margin-top: auto;         /* stick footer to bottom */
+      padding: 40px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
     }
-    ul { list-style: disc; margin-left: 1.5rem; }
-    section { width: 100%; max-width: 900px; margin-bottom: 60px; }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .footer-links a {
+      color: #eee;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: opacity 0.2s;
+    }
+    .footer-links a:hover { opacity: 0.75; }
+    .copy { font-size: 0.9rem; }
 
     /* -------- RESPONSIVE -------- */
     @media (max-width: 768px) {
       .nav-container { gap: 20px; padding: 10px 24px; }
-      header h1       { font-size: 2rem; }
-      h2              { font-size: 1.3rem; }
-      p, li           { font-size: 0.95rem; }
-      .nav-container a{ font-size: 0.95rem; }
+      .content       { padding: 24px; }
+      h1             { font-size: 1.6rem; }
+      .footer-links  { gap: 16px; }
     }
   </style>
 </head>
 <body>
-  <!-- ---------- NAVIGATION ---------- -->
+  <!-- ---------- TOP NAVIGATION ---------- -->
   <div class="nav-wrapper">
     <nav class="nav-container">
       <a href="/">Home</a>
       <a href="/about">About&nbsp;Us</a>
-      <a href="/policies">Policies</a>
       <a href="/contact">Contact&nbsp;Us</a>
     </nav>
   </div>
 
-  <!-- ---------- HEADER ---------- -->
-  <header>
-    <h1>stellaris media</h1>
-  </header>
+  <!-- ---------- POLICY CONTENT ---------- -->
+  <div class="content">
+    <h1>Legal Policies for Stellaris Media</h1>
+    <div class="date">Last updated: July&nbsp;4,&nbsp;2025</div>
 
-  <!-- ---------- TERMS & CONDITIONS ---------- -->
-  <section id="terms">
-    <h2>Terms&nbsp;&amp;&nbsp;Conditions</h2>
-    <p><strong>Effective Date:</strong> 02&nbsp;July&nbsp;2025</p>
-    <p>For the purpose of these Terms and Conditions, “<strong>Stellaris Media</strong>,” “<strong>we</strong>,” “<strong>us</strong>,” or “<strong>our</strong>” refers to Stellaris Media, Second House, Bus Stand, Sihora Road, Narsinghpur, Madhya Pradesh 487441, India. “<strong>you</strong>,” “<strong>your</strong>,” or “<strong>visitor</strong>” refers to anyone visiting our site or engaging our services.</p>
+    <p>Welcome to the Policies page of Stellaris Media (“we”, “our”, or “us”). Please review the terms outlined below to understand your rights and obligations when using our services or content.</p>
+
+    <!-- -------- Terms -------- -->
+    <h2 id="terms">1.&nbsp;Terms&nbsp;&amp;&nbsp;Conditions</h2>
+    <p>By using our website or services, you agree to the following:</p>
     <ul>
-      <li>Website content may change without prior notice.</li>
-      <li>We do not guarantee accuracy or completeness of information; you use it at your own risk.</li>
-      <li>Material on this site is owned or licensed by us. Reproduction is prohibited unless allowed by law.</li>
-      <li>Unauthorized use may give rise to claims for damages and/or be a criminal offence.</li>
-      <li>You may not link to our site without written permission.</li>
+      <li>All content on our site is subject to change without notice.</li>
+      <li>We do not guarantee accuracy or completeness of information provided.</li>
+      <li>Unauthorized reproduction of site content is prohibited and may lead to legal action.</li>
+      <li>You may not link to our site without prior permission.</li>
       <li>Disputes are governed by the laws of India and subject to the courts of New Delhi.</li>
-      <li>We are not liable for declined transactions caused by cardholder limits or bank rules.</li>
     </ul>
-  </section>
 
-  <!-- ---------- CANCELLATION & REFUND ---------- -->
-  <section id="refund">
-    <h2>Cancellation&nbsp;&amp;&nbsp;Refund&nbsp;Policy</h2>
-    <p><strong>Effective Date:</strong> 02&nbsp;July&nbsp;2025</p>
-    <p>Because our deliverables—strategy sessions, audits, and content production—are customized and knowledge‑based, we follow this policy:</p>
+    <!-- -------- Refund -------- -->
+    <h2 id="refund">2.&nbsp;Cancellation&nbsp;&amp;&nbsp;Refund&nbsp;Policy</h2>
+    <p>Stellaris Media provides digital services customized for each client. Due to this, our cancellation and refund terms are as follows:</p>
     <ul>
-      <li>You may cancel within <strong>5 days</strong> of signing, provided no work has begun, for a full refund (less payment‑gateway charges).</li>
-      <li>Once work begins, completed milestones are non‑refundable; unworked milestones are refunded within 6‑8 business days.</li>
-      <li>No refunds on completed strategy calls, audits, or consulting hours.</li>
-      <li>Request cancellations via contact@stellaris.media with project name, invoice #, and reason; we review within 3 business days.</li>
+      <li>Cancellations within 5 days of purchase (if work has not begun) are fully refundable.</li>
+      <li>Completed strategy calls or content work are non-refundable.</li>
+      <li>Refunds, if approved, will be processed within 6–8 business days.</li>
     </ul>
-  </section>
 
-  <!-- ---------- SHIPPING & DELIVERY ---------- -->
-  <section id="shipping">
-    <h2>Shipping&nbsp;&amp;&nbsp;Delivery&nbsp;Policy</h2>
-    <p><strong>Effective Date:</strong> 02&nbsp;July&nbsp;2025</p>
-    <p><em>Not applicable.</em> Stellaris Media is a service‑based business; all deliverables (reports, videos, strategy documents) are supplied digitally via secure links or cloud storage. No physical goods are shipped.</p>
-  </section>
+    <!-- -------- Shipping -------- -->
+    <h2 id="shipping">3.&nbsp;Shipping&nbsp;&amp;&nbsp;Delivery</h2>
+    <p>Not applicable. Stellaris Media delivers all services digitally. No physical goods are shipped.</p>
 
-  <!-- ---------- PRIVACY POLICY (SUMMARY) ---------- -->
-  <section id="privacy">
-    <h2>Privacy&nbsp;Policy&nbsp;(Summary)</h2>
-    <p>We collect only the data necessary to deliver and improve our services (e.g., name, email, analytics). We do not sell or rent your data. For full details, please see the dedicated Privacy Policy section on this site.</p>
-  </section>
+    <!-- -------- Privacy -------- -->
+    <h2 id="privacy">4.&nbsp;Privacy&nbsp;Policy&nbsp;(Summary)</h2>
+    <p>We collect only the data required to perform our services (e.g., name, email, business info). We do not rent or sell your information. Analytics are used solely to improve user experience. You may request data deletion at any time.</p>
+  </div>
+
+  <!-- ---------- FOOTER ---------- -->
+  <footer>
+    <div class="copy">© 2025 Stellaris Media</div>
+    <div class="footer-links">
+      <a href="#privacy">Privacy&nbsp;Policy</a>
+      <a href="#terms">Terms&nbsp;and&nbsp;Conditions</a>
+      <a href="#refund">Refund&nbsp;Policy</a>
+    </div>
+  </footer>
 </body>
 </html>
