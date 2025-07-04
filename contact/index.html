@@ -7,79 +7,86 @@
   <link rel="icon" href="/SM.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
   <style>
-    /* -------- RESET -------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
-      color: #111;
-      padding: 40px 20px;          /* top padding for nav */
-      min-height: 100vh;           /* fix bottom space */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    /* ---------- RESET ---------- */
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    /* ---------- BASE ---------- */
+    body{
+      font-family:'Inter',sans-serif;
+      background:url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center/cover;
+      color:#111;
+      padding:40px 24px 0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
 
-    /* -------- NAV WRAPPER -------- */
-    .nav-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 50px; }
-
-    /* -------- PILL NAV -------- */
-    .nav-container {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
-      border-radius: 46px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      padding: 12px 32px;
+    /* ---------- TOP PILL NAV ---------- */
+    .nav-wrapper{width:100%;display:flex;justify-content:center;margin-bottom:50px;}
+    .nav-container{
+      background:rgba(255,255,255,0.9);
+      backdrop-filter:blur(8px);
+      border-radius:46px;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+      display:flex;gap:32px;padding:12px 32px;
     }
-    .nav-container a {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-      transition: opacity 0.2s;
+    .nav-container a{
+      font-size:1rem;font-weight:600;color:#111;text-decoration:none;transition:opacity .2s;
     }
-    .nav-container a:hover { opacity: 0.65; }
+    .nav-container a:hover{opacity:.7;}
 
-    /* -------- HEADERS -------- */
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      text-transform: lowercase;
-      margin-bottom: 40px;
+    /* ---------- HEADER ---------- */
+    header h1{
+      font-size:2.5rem;font-weight:800;text-transform:lowercase;margin-bottom:40px;
     }
-    h2 { font-size: 1.6rem; font-weight: 800; margin: 40px 0 15px; }
-    h3 { font-size: 1.3rem; margin: 25px 0 10px; }
-
-    /* -------- CONTENT -------- */
-    p {
-      font-size: 1rem;
-      max-width: 700px;
-      margin: 0 auto 12px;
-      line-height: 1.6;
+    h2{font-size:1.6rem;font-weight:800;margin:40px 0 15px;}
+    h3{font-size:1.3rem;margin:25px 0 8px;}
+    p{
+      font-size:1rem;
+      max-width:700px;
+      margin:0 auto 12px;
+      line-height:1.7;
     }
-    section { width: 100%; max-width: 850px; margin-bottom: 60px; }
 
-    /* -------- RESPONSIVE -------- */
-    @media (max-width: 768px) {
-      .nav-container { gap: 20px; padding: 10px 24px; }
-      header h1 { font-size: 2rem; }
-      h2 { font-size: 1.3rem; }
-      p { font-size: 0.95rem; }
-      .nav-container a { font-size: 0.95rem; }
+    /* ---------- CONTACT BOX ---------- */
+    section{width:100%;max-width:850px;margin-bottom:60px;}
+
+    /* ---------- BOTTOM POLICY LINKS ---------- */
+    .bottom-links{
+      margin-top:auto;
+      padding:50px 0 30px;
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      justify-content:center;
+    }
+    .bottom-links a{
+      color:#111;
+      text-decoration:none;
+      font-size:.95rem;
+      font-weight:600;
+      transition:opacity .2s;
+    }
+    .bottom-links a:hover{opacity:.75;}
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px){
+      .nav-container{gap:20px;padding:10px 24px;}
+      header h1{font-size:2rem;}
+      h2{font-size:1.3rem;}
+      p{font-size:.95rem;}
+      .bottom-links{gap:16px;padding:40px 0 24px;}
     }
   </style>
 </head>
 <body>
-  <!-- ---------- NAVIGATION ---------- -->
+  <!-- ---------- TOP NAV ---------- -->
   <div class="nav-wrapper">
     <nav class="nav-container">
       <a href="/">Home</a>
       <a href="/about">About&nbsp;Us</a>
-      <a href="/policies">Policies</a>
       <a href="/contact">Contact&nbsp;Us</a>
     </nav>
   </div>
@@ -92,7 +99,7 @@
   <!-- ---------- CONTACT DETAILS ---------- -->
   <section id="contact">
     <h2>Contact&nbsp;Us</h2>
-    <p>If you have questions about our services or want to discuss how content marketing can grow your agency or consultancy, reach out anytime.</p>
+    <p>If you have questions about our services, need more information, or would like to discuss how content marketing can grow your agency or consultancy, reach out anytime.</p>
 
     <h3>Email</h3>
     <p>contact@stellaris.media</p>
@@ -108,5 +115,12 @@
       India
     </p>
   </section>
+
+  <!-- ---------- BOTTOM POLICY LINKS ---------- -->
+  <div class="bottom-links">
+    <a href="/policies#privacy">Privacy&nbsp;Policy</a>
+    <a href="/policies#terms">Terms&nbsp;and&nbsp;Conditions</a>
+    <a href="/policies#refund">Refund&nbsp;Policy</a>
+  </div>
 </body>
 </html>
