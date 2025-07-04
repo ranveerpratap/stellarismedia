@@ -36,7 +36,7 @@
     }
     .nav-container a:hover{opacity:.7;}
 
-    /* ---------- POLICY CONTENT BOX ---------- */
+    /* ---------- POLICY CONTENT ---------- */
     .content{
       width:100%;max-width:900px;
       background:rgba(255,255,255,0.95);
@@ -49,44 +49,42 @@
     h2{
       font-size:1.25rem;font-weight:700;
       margin:40px 0 12px;
-      border-bottom:2px solid #f7d5e5;       /* pink line */
+      border-bottom:2px solid #f7d5e5;       /* pink underline */
       padding-bottom:6px;
     }
     p{font-size:1rem;line-height:1.7;margin-bottom:18px;}
     ul{margin:8px 0 20px 1.5rem;}
     li{margin-bottom:10px;line-height:1.7;font-size:1rem;}
 
-    /* ---------- FOOTER ---------- */
-    footer{
-      width:100%;
-      margin-top:auto;
-      background:rgba(255,237,243,.9);      /* soft pink footer */
-      color:#111;
-      padding:40px 24px;
+    /* ---------- BOTTOM POLICY LINKS ---------- */
+    .bottom-links{
+      margin-top:auto;          /* pushes to bottom of viewport */
+      padding:50px 0 30px;
       display:flex;
-      flex-direction:column;
-      align-items:center;
       gap:24px;
-      box-shadow:0 -4px 12px rgba(0,0,0,.04);
+      flex-wrap:wrap;
+      justify-content:center;
     }
-    .copy{font-size:.9rem;font-weight:600;}
-    .footer-links{display:flex;gap:24px;flex-wrap:wrap;justify-content:center;}
-    .footer-links a{
-      color:#111;text-decoration:none;font-size:.95rem;transition:opacity .2s;
+    .bottom-links a{
+      color:#111;
+      text-decoration:none;
+      font-size:.95rem;
+      font-weight:600;
+      transition:opacity .2s;
     }
-    .footer-links a:hover{opacity:.75;}
+    .bottom-links a:hover{opacity:.75;}
 
     /* ---------- RESPONSIVE ---------- */
     @media(max-width:768px){
       .nav-container{gap:20px;padding:10px 24px;}
       .content{padding:24px;}
       h1{font-size:1.6rem;}
-      .footer-links{gap:16px;}
+      .bottom-links{gap:16px;padding:40px 0 24px;}
     }
   </style>
 </head>
 <body>
-  <!-- TOP NAV -->
+  <!-- ---------- TOP NAV ---------- -->
   <div class="nav-wrapper">
     <nav class="nav-container">
       <a href="/">Home</a>
@@ -95,12 +93,12 @@
     </nav>
   </div>
 
-  <!-- MAIN CONTENT -->
+  <!-- ---------- POLICY CONTENT ---------- -->
   <div class="content">
     <h1>Legal Policies for Stellaris Media</h1>
     <div class="date">Last updated: July&nbsp;4,&nbsp;2025</div>
 
-    <p>Welcome to the Policies page of Stellaris Media (“we”, “our”, or “us”). Please review the terms outlined below to understand your rights and obligations when using our services or content.</p>
+    <p>Welcome to the Policies page of Stellaris Media (“we”, “our”, or “us”). Please review the terms below to understand your rights and obligations when using our services or content.</p>
 
     <!-- Terms -->
     <h2 id="terms">1.&nbsp;Terms&nbsp;&amp;&nbsp;Conditions</h2>
@@ -115,7 +113,7 @@
 
     <!-- Refund -->
     <h2 id="refund">2.&nbsp;Cancellation&nbsp;&amp;&nbsp;Refund&nbsp;Policy</h2>
-    <p>Stellaris Media provides digital services customized for each client. Because of this, our cancellation and refund terms are:</p>
+    <p>Stellaris Media provides digital services customized for each client. Our cancellation and refund terms are:</p>
     <ul>
       <li>Cancellations within 5 days of purchase (if work has not begun) are fully refundable.</li>
       <li>Completed strategy calls or content work are non‑refundable.</li>
@@ -131,14 +129,11 @@
     <p>We collect only the data required to perform our services (e.g., name, email, business info). We do not rent or sell your information. Analytics are used solely to improve user experience. You may request data deletion at any time.</p>
   </div>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="copy">© 2025 Stellaris Media</div>
-    <div class="footer-links">
-      <a href="#privacy">Privacy&nbsp;Policy</a>
-      <a href="#terms">Terms&nbsp;and&nbsp;Conditions</a>
-      <a href="#refund">Refund&nbsp;Policy</a>
-    </div>
-  </footer>
+  <!-- ---------- SIMPLE BOTTOM LINKS ---------- -->
+  <div class="bottom-links">
+    <a href="#privacy">Privacy&nbsp;Policy</a>
+    <a href="#terms">Terms&nbsp;and&nbsp;Conditions</a>
+    <a href="#refund">Refund&nbsp;Policy</a>
+  </div>
 </body>
 </html>
