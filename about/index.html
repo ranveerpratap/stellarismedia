@@ -41,12 +41,32 @@
     h1{font-size:2.5rem;font-weight:800;text-transform:lowercase;margin-bottom:40px;}
     h2{font-size:1.6rem;font-weight:800;margin:40px 0 15px;}
     h3{font-size:1.3rem;margin:25px 0 10px;}
+
     p,li{
       font-size:1rem;line-height:1.7;max-width:800px;margin:0 auto 12px;text-align:left;
     }
     ul{list-style:disc;margin-left:1.5rem;}
     ol{margin-left:1.5rem;}
     section{width:100%;max-width:900px;margin-bottom:60px;}
+
+    /* ---------- PRICING CARDS ---------- */
+    .pricing{
+      display:flex;
+      flex-wrap:wrap;
+      gap:32px;
+      justify-content:center;
+      margin-top:20px;
+    }
+    .plan{
+      flex:1 1 260px;
+      background:rgba(255,255,255,0.9);
+      border-radius:16px;
+      box-shadow:0 4px 12px rgba(0,0,0,.08);
+      padding:24px;
+    }
+    .plan h4{font-size:1.15rem;font-weight:800;margin-bottom:12px;text-align:center;}
+    .price{font-size:1.1rem;font-weight:700;margin-bottom:8px;text-align:center;}
+    .plan p{text-align:center;margin-bottom:0;}
 
     /* ---------- BOTTOM POLICY LINKS ---------- */
     .bottom-links{
@@ -120,12 +140,27 @@
 
   <section id="founder">
     <h2>Founder</h2>
-    <p><strong>Ranveer Pratap</strong> is a content strategist and organic‑growth specialist. After scaling multiple channels through value‑driven content, he founded Stellaris Media to give agencies and experts a predictable system for high‑quality leads without paid ads.</p>
+    <p><strong>Ranveer Pratap</strong> is a content strategist and organic‑growth specialist. After scaling multiple channels via value‑driven content, he founded Stellaris Media to give agencies and experts a predictable system for high‑quality leads without paid ads.</p>
   </section>
 
-  <section id="pricing-note">
-    <h3>Flexible&nbsp;Pricing</h3>
-    <p>Engagements are tailored to your stage and goals. We discuss scope and investment transparently on a quick Google Meet so you pay only for the levers that move <em>your</em> business forward.</p>
+  <!-- ---------- PRICING ---------- -->
+  <section id="pricing">
+    <h2>Pricing&nbsp;Plans</h2>
+    <div class="pricing">
+      <!-- Plan 1 -->
+      <div class="plan">
+        <h4>Plan 1 – Retainer + Commission</h4>
+        <div class="price">$1 000&nbsp;/month<br/>+ 10 % of deals closed via YouTube</div>
+        <p>Best for agencies that want full content support while sharing success upside.</p>
+      </div>
+
+      <!-- Plan 2 -->
+      <div class="plan">
+        <h4>Plan 2 – Commission&nbsp;Only*</h4>
+        <div class="price">10 % of deals closed via YouTube</div>
+        <p>*Client covers production expenses. Ideal if you have an internal team and need strategic & distribution expertise.</p>
+      </div>
+    </div>
   </section>
 
   <!-- ---------- BOTTOM POLICY LINKS ---------- -->
