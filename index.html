@@ -7,112 +7,105 @@
   <link rel="icon" href="SM.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet"/>
   <style>
-    /* -------- RESET -------- */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Inter', sans-serif;
-      background: url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center / cover;
-      color: #111;
-      padding: 40px 20px;          /* top padding for nav */
-      min-height: 100vh;           /* fix bottom space */
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
+    /* ---------- RESET ---------- */
+    *{margin:0;padding:0;box-sizing:border-box;}
+
+    /* ---------- BASE ---------- */
+    body{
+      font-family:'Inter',sans-serif;
+      background:url('https://www.jootoor.com/wp-content/uploads/2023/09/White-Gradients.jpg') no-repeat center/cover;
+      color:#111;
+      padding:40px 24px 0;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      text-align:center;
     }
 
-    /* -------- NAV WRAPPER -------- */
-    .nav-wrapper { width: 100%; display: flex; justify-content: center; margin-bottom: 50px; }
+    /* ---------- TOP PILL NAV ---------- */
+    .nav-wrapper{width:100%;display:flex;justify-content:center;margin-bottom:50px;}
+    .nav-container{
+      background:rgba(255,255,255,0.9);
+      backdrop-filter:blur(8px);
+      border-radius:46px;
+      box-shadow:0 4px 12px rgba(0,0,0,.06);
+      display:flex;gap:32px;padding:12px 32px;
+    }
+    .nav-container a{
+      font-size:1rem;font-weight:600;color:#111;text-decoration:none;transition:opacity .2s;
+    }
+    .nav-container a:hover{opacity:.7;}
 
-    /* -------- PILL NAV -------- */
-    .nav-container {
-      background: rgba(255,255,255,0.9);
-      backdrop-filter: blur(8px);
-      border-radius: 46px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-      display: flex;
-      align-items: center;
-      gap: 32px;
-      padding: 12px 32px;
+    /* ---------- HERO ---------- */
+    header h1{
+      font-size:2.5rem;font-weight:800;text-transform:lowercase;margin-bottom:40px;
     }
-    .nav-container a {
-      font-size: 1rem;
-      font-weight: 600;
-      color: #111;
-      text-decoration: none;
-      transition: opacity 0.2s;
-    }
-    .nav-container a:hover { opacity: 0.65; }
-
-    /* -------- HERO CONTENT -------- */
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      text-transform: lowercase;
-      margin-bottom: 40px;
-    }
-    .info-heading {
-      font-size: 1.7rem;
-      font-weight: 800;
-      max-width: 750px;
-      margin-bottom: 60px;
-      line-height: 1.4;
+    .info-heading{
+      font-size:1.7rem;font-weight:800;max-width:750px;margin-bottom:60px;line-height:1.4;
     }
 
-    /* -------- CTA BUTTON -------- */
-    .cta-btn {
-      display: inline-block;
-      background: #111;
-      color: #fff;
-      padding: 16px 38px;
-      font-weight: 800;
-      font-size: 1.05rem;
-      border-radius: 50px;
-      text-decoration: none;
-      box-shadow: 0 0 10px rgba(0,0,0,0.15);
-      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    /* ---------- CTA BUTTON ---------- */
+    .cta-btn{
+      display:inline-block;
+      background:#111;color:#fff;
+      padding:16px 38px;border-radius:50px;
+      font-weight:800;font-size:1.05rem;
+      text-decoration:none;
+      box-shadow:0 0 10px rgba(0,0,0,.15);
+      transition:box-shadow .3s,transform .3s;
     }
-    .cta-btn:hover {
-      box-shadow: 0 0 18px rgba(0,0,0,0.25);
-      transform: translateY(-3px);
+    .cta-btn:hover{
+      box-shadow:0 0 18px rgba(0,0,0,.25);
+      transform:translateY(-3px);
     }
 
-    /* -------- FADE‑IN EFFECT -------- */
-    .fade-in {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    /* ---------- FADE‑IN ---------- */
+    .fade-in{opacity:0;transform:translateY(40px);transition:opacity .6s,transform .6s;}
+    .fade-in.visible{opacity:1;transform:translateY(0);}
 
-    /* -------- RESPONSIVE -------- */
-    @media (max-width: 768px) {
-      .nav-container { gap: 20px; padding: 10px 24px; }
-      header h1          { font-size: 2rem; }
-      .info-heading      { font-size: 1.35rem; }
-      .nav-container a   { font-size: 0.95rem; }
-      .cta-btn           { padding: 14px 32px; font-size: 1rem; }
+    /* ---------- BOTTOM POLICY LINKS ---------- */
+    .bottom-links{
+      margin-top:auto;
+      padding:50px 0 30px;
+      display:flex;
+      gap:24px;
+      flex-wrap:wrap;
+      justify-content:center;
     }
-    @media (max-width: 480px) {
-      .info-heading { font-size: 1.2rem; }
+    .bottom-links a{
+      color:#111;
+      text-decoration:none;
+      font-size:.95rem;
+      font-weight:600;
+      transition:opacity .2s;
+    }
+    .bottom-links a:hover{opacity:.75;}
+
+    /* ---------- RESPONSIVE ---------- */
+    @media(max-width:768px){
+      .nav-container{gap:20px;padding:10px 24px;}
+      header h1{font-size:2rem;}
+      .info-heading{font-size:1.35rem;}
+      .cta-btn{padding:14px 32px;font-size:1rem;}
+      .bottom-links{gap:16px;padding:40px 0 24px;}
+    }
+    @media(max-width:480px){
+      .info-heading{font-size:1.2rem;}
     }
   </style>
 </head>
 <body>
-  <!-- ---------- NAVIGATION ---------- -->
+  <!-- ---------- TOP NAV ---------- -->
   <div class="nav-wrapper">
     <nav class="nav-container">
       <a href="/">Home</a>
       <a href="/about">About&nbsp;Us</a>
-      <a href="/policies">Policies</a>
       <a href="/contact">Contact&nbsp;Us</a>
     </nav>
   </div>
 
-  <!-- ---------- HERO SECTION ---------- -->
+  <!-- ---------- HERO ---------- -->
   <header class="fade-in">
     <h1>stellaris media</h1>
   </header>
@@ -122,23 +115,24 @@
     with our YouTube Organic Funnels.
   </p>
 
-  <!-- ---------- CTA BUTTON ---------- -->
   <a class="cta-btn fade-in" href="https://calendly.com/stellarismedia/call" target="_blank" rel="noopener noreferrer">
     Book&nbsp;A&nbsp;Call
   </a>
 
+  <!-- ---------- SIMPLE BOTTOM POLICY LINKS ---------- -->
+  <div class="bottom-links">
+    <a href="/policies#privacy">Privacy&nbsp;Policy</a>
+    <a href="/policies#terms">Terms&nbsp;and&nbsp;Conditions</a>
+    <a href="/policies#refund">Refund&nbsp;Policy</a>
+  </div>
+
   <!-- ---------- FADE‑IN SCRIPT ---------- -->
   <script>
-    const faders = document.querySelectorAll('.fade-in');
-    const appearOpts = { threshold: 0.1, rootMargin: "0px 0px -50px 0px" };
-    const observer  = new IntersectionObserver((entries, obs) => {
-      entries.forEach(e => {
-        if (!e.isIntersecting) return;
-        e.target.classList.add('visible');
-        obs.unobserve(e.target);
-      });
-    }, appearOpts);
-    faders.forEach(el => observer.observe(el));
+    const faders=document.querySelectorAll('.fade-in');
+    const obs=new IntersectionObserver((e,o)=>{
+      e.forEach(ent=>{if(ent.isIntersecting){ent.target.classList.add('visible');o.unobserve(ent.target);} });
+    },{threshold:.1,rootMargin:"0px 0px -50px 0px"});
+    faders.forEach(el=>obs.observe(el));
   </script>
 </body>
 </html>
